@@ -1,4 +1,4 @@
-nnback
+NNBack
 ======
 
-Dual n-back with Angular.js
+Dual n-back with Angular.js. See the site at [nnback.ukoki.com](http://nnback.ukoki.com)
