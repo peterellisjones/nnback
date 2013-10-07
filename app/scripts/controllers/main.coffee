@@ -3,11 +3,6 @@
 app = angular.module('nnbackApp')
 app.controller 'MainCtrl', ($scope, $document) ->
 
-    $scope.visual_item = null
-    $scope.visual_queue = []
-
-    $scope.audio_item = null
-    $scope.audio_queue = []
 
     $scope.visual_items = [1,3,5,7]
     $scope.audio_items = [0,1,2,3]
@@ -21,22 +16,23 @@ app.controller 'MainCtrl', ($scope, $document) ->
     $scope.difficulty = 2
     $scope.difficulty_options = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
 
-    $scope.tries = 0
-    $scope.success = 0
-    $scope.accuracy = 0
-    $scope.longest_chain = 0
-    $scope.current_chain = 0
-    $scope.false_positives = 0
-    $scope.false_negatives = 0
-
-    $scope.status = "paused"
-    $scope.shortcuts = [{key: 'enter', description: 'begin'}] 
-    $scope.visual_item = null
-
     $scope.stop = () ->
-      console.log "stopping"
+      $scope.tries = 0
+      $scope.success = 0
+      $scope.accuracy = 0
+      $scope.longest_chain = 0
+      $scope.current_chain = 0
+      $scope.false_positives = 0
+      $scope.false_negatives = 0
+      $scope.visual_item = null
+      $scope.visual_queue = []
+      $scope.audio_item = null
+      $scope.audio_queue = []
+
       $scope.status = "paused"
       $scope.shortcuts = [{key: 'enter', description: 'begin'}] 
+      $scope.visual_item = null
+
       $scope.$apply()
 
     $scope.start = () ->
