@@ -1,0 +1,62 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+@import "bootstrap-sass/lib/bootstrap";
+
+/* Put your CSS here */
+html, body {
+  margin: 20px;
+}
+
+body {
+    //background: #fafafa;
+    background: #d62323;
+    // yellow: #ffde00
+    // red: #d62323
+    // blue: #1b49be
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff;
+}
+
+a, a:visited, a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.info td, .controls td {
+    width: 50%;
+}
+
+.info .type, .controls .key {
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+}
+
+table.nnback {
+    margin-left: -9px !important;
+    color: #f00;
+    td {
+        border: 10px #d62323 solid;
+    }
+    // tr.toprow td, tr.centerrow td {
+    //     border-bottom: 10px #d62323 solid;
+    // }
+    // tr.bottomrow td, tr.centerrow td {
+    //     border-top: 10px #d62323 solid;
+    // }
+    // td.leftcol, td.centercol {
+    //     border-right: 10px #d62323 solid;
+    // }
+    // td.rightcol, td.centercol {
+    //     border-left: 10px #d62323 solid;
+    // }
+    td {
+        background-color: #fff;
+        height: 170px;
+        width: 170px;
+    }
+    td.active {
+        background-color: #1b49be;
+    }
+}

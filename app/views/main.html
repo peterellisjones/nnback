@@ -1,0 +1,74 @@
+<div ng-controller="MainCtrl">
+  <div class="row-fluid">
+    <div class="span8">
+      <h1>NNBack</h1>
+      <p>Simple <a hre="http://en.wikipedia.org/wiki/N-back">Dual N-Back Task</a>. By <a href="http://ukoki.com">Peter Ellis Jones</a>.</p>
+      <table class="nnback span">
+        <tr class="toprow">
+          <td class="leftcol {{cell_status(0)}}"></td>
+          <td class="centercol {{cell_status(1)}}"></td>
+          <td class="rightcol {{cell_status(2)}}"></td>
+        </tr>
+        <tr class="centerrow">
+          <td class="leftcol {{cell_status(3)}}"></td>
+          <td class="centercol {{cell_status(4)}}"></td>
+          <td class="rightcol {{cell_status(5)}}"></td>
+        </tr>
+        <tr class="bottomrow">
+          <td class="leftcol {{cell_status(6)}}"></td>
+          <td class="centercol {{cell_status(7)}}"></td>
+          <td class="rightcol {{cell_status(8)}}"></td>
+        </tr>
+      </table>
+      <audio id="audio-0" src="audio/animals-0.wav" preload="auto"></audio>
+      <audio id="audio-1" src="audio/animals-1.wav" preload="auto"></audio>
+      <audio id="audio-2" src="audio/animals-2.wav" preload="auto"></audio>
+      <audio id="audio-3" src="audio/animals-3.wav" preload="auto"></audio>
+      <audio id="audio-4" src="audio/animals-4.wav" preload="auto"></audio>
+      <audio id="audio-5" src="audio/animals-5.wav" preload="auto"></audio>
+      <audio id="audio-6" src="audio/animals-6.wav" preload="auto"></audio>
+      <audio id="audio-7" src="audio/animals-7.wav" preload="auto"></audio>
+      <audio id="audio-8" src="audio/animals-8.wav" preload="auto"></audio>
+    </div>
+    <div class="span4">
+      <h4>Instructions</h4>
+      <p>Press enter to start. You will be presented with a sound and a square on the 3x3 grid to the left. Remember the sounds and square and press UP to get the next pattern. The goal of dual n-back is to remember the pattern that occured n-steps ago. If n is 2, then press LEFT if you hear a sound repeat after 2 steps, and RIGHT if you see a square repeat after 2 steps, or DOWN if both repeat after 2 steps. Good luck!</p>
+      <h4>Difficulty</h4>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label for="difficulty" class="sr-only">N</label>
+          <select ng-model="difficulty" ng-options="d for d in difficulty_options" class="form-control" id="difficulty">
+          </select>
+        </div>
+      </form>
+      
+      <h4>Progress</h4>
+      <table class="info">
+        <tr>
+          <td class="type">Accuracy:</td><td class="value">{{accuracy}}%<td>
+        </tr> 
+        <tr>
+          <td class="type">Correct:</td><td class="value">{{success}}<td>
+        </tr> 
+        <tr>
+          <td class="type">False positives:</td><td class="value">{{false_positives}}<td>
+        </tr> 
+        <tr>
+          <td class="type">False negatives:</td><td class="value">{{false_negatives}}<td>
+        </tr> 
+        <tr>
+          <td class="type">Longeset chain:</td><td class="value">{{longest_chain}}<td>
+        </tr> 
+        <tr>
+          <td class="type">Current chain:</td><td class="value">{{current_chain}}<td>
+        </tr> 
+      </table>
+      <h4>Keyboard Shortcuts</h4>
+      <table class="controls">
+        <tr ng-repeat="shortcut in shortcuts">
+          <td class="key">{{shortcut.key}}</td><td class="usage">{{shortcut.description}}<td>
+        </tr> 
+      </table>
+    </div>
+  </div>
+</div>
